@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Animated Smoke Text with CSS & Vanilla Javascript</title>
+	<link href="style.css" rel="stylesheet">
+</head>
+<body>
+<section>
+	<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias aperiam consectetur cum
+		cumque cupiditate ea eveniet expedita ipsum itaque molestiae molestias nostrum omnis porro quae, quis quisquam
+		unde velit vero vitae. Doloremque doloribus eaque facere itaque labore? Culpa ducimus expedita itaque laboriosam
+		nobis perspiciatis qui quo recusandae saepe sint? Accusamus at ducimus facere minus, nam odit quas reprehenderit
+		rerum sed totam. Doloremque labore magni perspiciatis? Adipisci amet aperiam architecto asperiores delectus
+		earum impedit inventore, laboriosam libero mollitia nihil numquam officiis possimus, quas quibusdam quis quod.
+		Consequuntur dignissimos doloremque laudantium minus modi. Asperiores esse est explicabo fugit tenetur vero
+		voluptatibus?</p>
+</section>
+
+<script>
+  // Split text into letters
+  const text = document.querySelector('.text');
+  text.innerHTML = text.textContent.replace(/\S/g, '<span>$&</span>');
+
+  //  Add active class on hovered "span" tag
+  const letters = document.querySelectorAll('span');
+  for (let i = 0; i < letters.length; i++) {
+    letters[i].addEventListener('mouseover', function() {
+      letters[i].classList.add('active');
+    });
+  }
+</script>
+</body>
+</html>
